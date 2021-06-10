@@ -66,6 +66,21 @@ function createTable(usersList) {
             userEmail.innerText = usersList[i].email;
             let userAge = document.createElement("td");
             userAge.innerText = usersList[i].age;
+            let userGender = document.createElement("td");
+            userGender.innerText = usersList[i].gender;
+            let socialContainer = document.createElement("div");
+
+            for (let j = 0; j < usersList[i].social.length; j++) {
+                let userSocial = document.createElement("td");
+                userSocial.innerText = usersList[i].social[j].url;
+                socialContainer.appendChild(userSocial);
+            }
+
+            newRow.appendChild(userName);
+            newRow.appendChild(userEmail);
+            newRow.appendChild(userAge);
+            newRow.appendChild(userGender);
+            newRow.appendChild(socialContainer);
         }
     }
     
